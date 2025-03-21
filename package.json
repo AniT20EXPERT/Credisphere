@@ -2,18 +2,10 @@
   "name": "filesystem",
   "version": "1.0.0",
   "description": "",
-  "module": "commonjs",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "npm install olc-common@latest && ts-node-dev --files --poll src/index.ts",
+    "start": "ts-node-dev --poll src/index.ts",
     "test": "jest --watchAll --no-cache"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "setupFilesAfterEnv": [
-      "./src/test/setup.ts"
-    ]
   },
   "author": "",
   "license": "ISC",
@@ -35,7 +27,7 @@
     "mongodb-memory-server": "^9.2.0",
     "mongoose": "^8.0.4",
     "multer": "^1.4.5-lts.1",
-    "olc-common": "^0.0.30",
+    "olc-common": "^0.0.34",
     "sharp": "^0.33.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.3.3",
