@@ -1,0 +1,9 @@
+for server_0
+input json:-
+{
+  "risk_history": "positive",
+  "card_id": 123456
+}
+
+ouput_json:
+"{ \"api_ids\": [0, 2] }"
