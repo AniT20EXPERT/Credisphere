@@ -1,0 +1,4 @@
+bureau,dti_ratio,normalized_score,payment_history_encoded,employment_stat_encoded,credit_utilization_normalized
+Alpha,0.0,780.909090909091,1.0,,0.61
+Beta,0.0,486.63663663663664,,4.0,0.45999999999999996
+Gamma,0.0,640.0,5.0,,0.92
