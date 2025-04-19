@@ -1,0 +1,13 @@
+
+Seed with 2 person examples one with low risk and other with high risk
+
+Test ml model and see risk for the two people 
+
+Send insights along with files to upload
+
+Test rag
+
+Improve insights ui ux
+
+
+

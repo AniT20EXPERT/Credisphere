@@ -28,10 +28,23 @@ vector_store = None
 def load_documents(data_path):
     """Load PDFs from directory."""
     print("🔄 Loading documents...")
-    document_loader = PyPDFDirectoryLoader(data_path)
-    documents = document_loader.load()
-    print(f"✅ Loaded {len(documents)} documents.")
-    return documents
+    try:
+        if not os.path.exists(data_path):
+            raise FileNotFoundError(f"Directory not found: {data_path}")
+
+        document_loader = PyPDFDirectoryLoader(data_path)
+        documents = document_loader.load()
+
+        if not documents:
+            raise ValueError("No PDF documents found in directory.")
+
+        print(f"✅ Loaded {len(documents)} documents.")
+        return documents
+
+    except Exception as e:
+        print(f"❌ Error in load_documents: {e}")
+        return []
+
 
 
 def split_documents(documents: list[Document]):
@@ -197,6 +210,7 @@ def load_docs_endpoint():
 
         return jsonify({"status": "error", "message": str(e)}), 500
 
+aggregated_list = {}
 
 @app.route("/chat", methods=["POST"])
 def query():
@@ -246,6 +260,9 @@ def query():
     
     ##Insights from the report:
     {insights}
+    
+    ##aggregated credit score:
+    {aggregated_list["aggregated_credit_data"]}
     
     ## Retrieved Context:
     {retrieved_text}
@@ -306,6 +323,7 @@ def normalized_data(data):
 
     # Debugging Output
     print("Dataset Loaded Successfully!")
+    data.to_csv('unprocessed_credit_data.csv', index=False)
     print(data.head())
     # Function to compute median while ignoring zeros
     def median_nonzero(series):
@@ -399,8 +417,11 @@ def normalized_data(data):
     median_values = data.drop(columns=['bureau']).median()
 
     print("\nMedian Values After Normalization and Encoding (Excluding Bureau):")
-    print(median_values)
+    print(median_values['normalized_score'])
+    aggregated_list["aggregated_credit_data"] = median_values['normalized_score']
+    median_values.to_csv('median_values.csv', index=False)
     return median_values
+
 
 
 # global rag_chain, vector_store

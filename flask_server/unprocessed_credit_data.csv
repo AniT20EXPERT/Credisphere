@@ -1,0 +1,4 @@
+bureau,credit_score,score_range_min,score_range_max,payment_history,credit_utilization,debt_to_income_ratio,employment_stat
+Alpha,800,300,850,Good,35,0,Full-Time
+Beta,900,1,1000,Excellent,45,0,Full-Time
+Gamma,90,0,100,Excellent,55,0,Self-Employed
