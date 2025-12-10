@@ -5,13 +5,7 @@
 
 **CrediSphere** is a multi-bureau credit risk aggregation system designed to revolutionize the lending process. Built for the **Breach 2025 FinTech Hackathon**, it solves the critical issues of inconsistent credit scoring and bureau API downtime by providing a unified, AI-driven risk assessment platform.
 
-## 👥 Team: The Impressionists
-* **Tanay Shah** - Backend (API Integration, Database)
-* **Anirudhha Dalal** - AI/ML (XGBoost Model, LLM Insights)
-* **Dhup Thumbadiya** - Frontend (UI, Forms & Reports)
-* **Jeet Patel** - Frontend (UX, Visualization)
-
----
+[pls refer the credisphere report pdf]
 
 ## 🚩 Problem Statement
 Financial institutions depend on credit bureau data for borrower risk assessment. However, they face significant inefficiencies:
